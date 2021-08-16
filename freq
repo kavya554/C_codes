@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    char *array;
+    array= malloc(1024 * sizeof(char));
+    char i;
+    int count,j;
+    scanf("%s",array);  //ascii 0=48
+    array= realloc(array, strlen(array) + 1);
+    for(i=48;i<=57;i++){
+        count=0;
+        for(j=0;j<strlen(array);j++)
+        {
+            if(array[j]==i)
+                count++;
+        }
+        printf("%d ",count);
+    }
+     free(array);
+    return 0;
+}
