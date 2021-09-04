@@ -1,0 +1,63 @@
+/* Given a bigger string and N smaller string, to find which are the sub strings */
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int match(char *a,char *b)
+{
+    int o=strlen(a);
+    int l=strlen(b);
+    int j,k;
+    for(j=0;j<o;j++)
+    {
+        
+        for(k=0;k<l;k++)
+        {
+            if(a[j+k]!=b[k]) 
+            {
+            	
+            	break;
+			      }
+            	
+        }
+        
+        if(k==l)
+        {
+        	
+        return 1;// j will have the matched position index
+		    }
+	  }
+	
+        return 0;
+        
+ }
+
+    
+    
+
+int main()
+{
+    int p,k=0,i;
+    int final[100];
+    char *a=malloc(1024*sizeof(char));
+    scanf("%s",a);
+    int n;
+    scanf("%d",&n);
+    char b[n][10000];
+    for(i=0;i<n;i++)
+    {
+         scanf("%s",b[i]);
+         final[i]=match(a,b[i]);
+         
+    }
+    
+    for(i=0;i<n;i++)
+	  {
+         printf("%d\n",final[i]);
+        
+    }
+    
+    
+   
+    return 0;
+}
